@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get AI Working Inside Your Business | CRM Crew</title>
+<meta name="description" content="Book a free 30-minute AI Opportunity Audit. Leave with a ranked shortlist of the automations that will actually pay off in your business — yours to keep either way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0B0A;
+    --panel:rgba(255,255,255,.03);
+    --panel-2:rgba(255,255,255,.05);
+    --line:rgba(255,255,255,.09);
+    --line-strong:rgba(255,255,255,.16);
+    --text:#F4F6F4;
+    --dim:#98A29A;
+    --green:#4ADE80;
+    --green-hi:#6BF39B;
+    --green-deep:#1FAE58;
+    --grad:linear-gradient(120deg,#7CF5A6 0%,#4ADE80 45%,#22C55E 100%);
+    --maxw:1120px;
+    --r-lg:24px;
+    --r-md:18px;
+    --r-pill:999px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+  }
+  ::selection{background:var(--green);color:#04120A;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    font-size:16.5px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+  .mono{
+    font-family:'Space Mono',monospace;
+    font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+  }
+  .grad-text{
+    background:var(--grad);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,11,10,.72);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:16px 28px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .logo{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+    font-size:19px;letter-spacing:.06em;color:var(--text);text-decoration:none;
+    display:flex;align-items:center;gap:10px;text-transform:uppercase;line-height:1;
+  }
+  .logo .dot{
+    width:14px;height:14px;border-radius:50%;
+    border:2.5px solid var(--green);display:inline-block;
+  }
+  .nav-cta{
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
+    color:var(--text);text-decoration:none;
+    border:1px solid var(--line-strong);border-radius:var(--r-pill);
+    padding:10px 20px;transition:border-color .2s ease,color .2s ease;
+  }
+  .nav-cta:hover{border-color:var(--green);color:var(--green);}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:88px 0 100px;text-align:center;}
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 62% 44% at 50% 0%, rgba(74,222,128,.14), transparent 66%),
+      radial-gradient(ellipse 40% 30% at 85% 70%, rgba(34,197,94,.06), transparent 70%);
+  }
+  .hero-inner{position:relative;max-width:880px;margin:0 auto;}
+  .badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:500;color:var(--dim);
+    border:1px solid var(--line);border-radius:var(--r-pill);
+    padding:8px 18px;margin-bottom:34px;
+    background:var(--panel);
+  }
+  .badge .pulse{
+    width:7px;height:7px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 0 rgba(74,222,128,.5);
+    animation:pulse 2.2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(74,222,128,.45);}
+    70%{box-shadow:0 0 0 9px rgba(74,222,128,0);}
+    100%{box-shadow:0 0 0 0 rgba(74,222,128,0);}
+  }
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+    font-size:clamp(38px,5.8vw,68px);
+    line-height:1.05;letter-spacing:-.028em;
+    margin-bottom:24px;
+  }
+  .hero .sub{
+    font-size:18px;color:var(--dim);max-width:56ch;margin:0 auto 52px;font-weight:400;
+  }
+  .hero .sub strong{color:var(--text);font-weight:600;}
+
+  /* vsl */
+  .vsl-shell{position:relative;max-width:860px;margin:0 auto;}
+  .vsl-shell::before{
+    content:"";position:absolute;inset:-4px;border-radius:calc(var(--r-lg) + 4px);
+    background:linear-gradient(160deg, rgba(74,222,128,.5), rgba(74,222,128,.06) 40%, transparent 70%);
+    filter:blur(1px);
+  }
+  .vsl-shell::after{
+    content:"";position:absolute;inset:-90px -120px;z-index:-1;pointer-events:none;
+    background:radial-gradient(ellipse 55% 55% at 50% 50%, rgba(74,222,128,.10), transparent 70%);
+  }
+  .vsl-inner{
+    position:relative;width:100%;padding-top:56.25%;
+    background:#050605;border-radius:var(--r-lg);overflow:hidden;
+    box-shadow:0 30px 90px rgba(0,0,0,.65);
+  }
+  .vsl-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .vsl-placeholder{
+    position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:18px;text-align:center;padding:24px;
+    background:radial-gradient(ellipse at center, #101510, #050605 80%);
+  }
+  .vsl-placeholder .play{
+    width:80px;height:80px;border-radius:50%;
+    background:var(--grad);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 40px rgba(34,197,94,.4);
+  }
+  .vsl-placeholder .play svg{margin-left:5px;}
+  .vsl-placeholder p{font-size:13px;color:var(--dim);max-width:44ch;}
+
+  .cta-block{margin-top:48px;}
+  .btn{
+    display:inline-block;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:16.5px;
+    color:#04120A;text-decoration:none;
+    background:var(--grad);
+    border-radius:var(--r-pill);
+    padding:18px 42px;
+    box-shadow:0 10px 34px rgba(34,197,94,.35), inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(34,197,94,.45), inset 0 1px 0 rgba(255,255,255,.35);}
+  .btn:focus-visible{outline:2px solid var(--text);outline-offset:4px;}
+  .btn.ghost{
+    background:transparent;color:var(--text);
+    border:1px solid var(--line-strong);box-shadow:none;
+  }
+  .btn.ghost:hover{border-color:var(--green);color:var(--green);transform:none;}
+  .cta-note{
+    display:block;margin-top:18px;font-size:13px;color:var(--dim);letter-spacing:.02em;
+  }
+
+  /* trust row */
+  .trust-row{
+    margin-top:64px;padding-top:32px;border-top:1px solid var(--line);
+    display:flex;justify-content:center;align-items:center;gap:44px;flex-wrap:wrap;
+  }
+  .trust-item{display:flex;align-items:center;gap:10px;color:var(--dim);font-size:14px;font-weight:500;}
+  .trust-item b{color:var(--text);font-weight:600;}
+  .stars{color:var(--green);letter-spacing:2px;font-size:13px;}
+
+  /* ---------- reviews ---------- */
+  .quote-card{
+    max-width:820px;margin:0 auto 40px;text-align:center;
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);
+    padding:48px 44px 40px;position:relative;
+  }
+  @media(max-width:640px){.quote-card{padding:36px 24px 32px;}}
+  .quote-card .stars{display:block;font-size:16px;letter-spacing:4px;margin-bottom:22px;}
+  .quote-card blockquote{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:600;
+    font-size:clamp(19px,2.6vw,25px);line-height:1.45;letter-spacing:-.01em;
+    margin-bottom:24px;
+  }
+  .quote-card cite{
+    font-style:normal;font-size:14px;color:var(--dim);
+  }
+  .quote-card cite b{color:var(--text);font-weight:600;display:block;}
+  .widget-slot{
+    max-width:920px;margin:0 auto;
+    border:1px dashed var(--line-strong);border-radius:var(--r-md);
+    padding:56px 24px;text-align:center;
+    font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--dim);
+    background:rgba(0,0,0,.25);
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:104px 0;position:relative;}
+  .sec-head{max-width:760px;margin-bottom:56px;}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .sec-head .mono{display:block;margin-bottom:18px;color:var(--green);}
+  h2{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+    font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-.02em;
+  }
+  .sec-sub{color:var(--dim);font-size:17.5px;margin-top:18px;max-width:60ch;}
+  .sec-head.center .sec-sub{margin-left:auto;margin-right:auto;}
+
+  /* ---------- offer cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:880px){.cards{grid-template-columns:1fr;}}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--r-lg);
+    padding:32px 28px 34px;
+    transition:border-color .25s ease, background .25s ease, transform .25s ease;
+  }
+  .card:hover{border-color:rgba(74,222,128,.4);background:var(--panel-2);transform:translateY(-3px);}
+  .card .num{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;
+    color:#04120A;background:var(--grad);
+    width:34px;height:34px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+  }
+  .card h3{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:600;
+    font-size:21px;letter-spacing:-.01em;line-height:1.25;margin-bottom:12px;
+  }
+  .card p{font-size:15.5px;color:var(--dim);}
+  .keep-line{
+    margin-top:56px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;
+  }
+  .keep-line p{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:600;
+    font-size:clamp(20px,2.6vw,26px);line-height:1.4;letter-spacing:-.01em;
+  }
+  .keep-line p span{color:var(--green);}
+
+  /* ---------- fit ---------- */
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:840px){.fit-grid{grid-template-columns:1fr;}}
+  .fit-col{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);
+    padding:36px 32px;
+  }
+  @media(max-width:640px){.fit-col{padding:28px 22px;}}
+  .fit-col.yes{border-color:rgba(74,222,128,.28);}
+  .fit-col .mono{display:block;margin-bottom:22px;}
+  .fit-col.yes .mono{color:var(--green);}
+  .fit-col ul{list-style:none;}
+  .fit-col li{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:12px 0;font-size:15.5px;
+  }
+  .fit-col li + li{border-top:1px solid var(--line);}
+  .icon{
+    flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:600;margin-top:1px;
+  }
+  .fit-col.yes .icon{background:rgba(74,222,128,.15);color:var(--green);}
+  .fit-col.no .icon{background:rgba(255,255,255,.07);color:var(--dim);}
+  .fit-col.no li{color:var(--dim);}
+
+  /* ---------- proof ---------- */
+  .proof-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start;}
+  @media(max-width:860px){.proof-grid{grid-template-columns:1fr;gap:40px;}}
+  .proof-copy p{color:var(--dim);margin-bottom:20px;font-size:16.5px;}
+  .proof-copy p strong{color:var(--text);font-weight:600;}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:480px){.stat-grid{grid-template-columns:1fr;}}
+  .stat{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);
+    padding:24px 22px;
+  }
+  .stat .v{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+    font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em;line-height:1.15;
+  }
+  .stat .v span{color:var(--green);}
+  .stat .k{font-size:12.5px;color:var(--dim);margin-top:8px;letter-spacing:.04em;text-transform:uppercase;font-weight:500;}
+
+  /* ---------- faq ---------- */
+  .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  details{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);
+    transition:border-color .2s ease;
+  }
+  details[open]{border-color:rgba(74,222,128,.35);}
+  summary{
+    cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+    padding:22px 26px;
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17.5px;letter-spacing:-.005em;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .tick{
+    color:var(--green);font-size:20px;font-weight:400;
+    transition:transform .2s ease;flex:0 0 auto;line-height:1;
+  }
+  details[open] summary .tick{transform:rotate(45deg);}
+  details .a{padding:0 26px 24px;color:var(--dim);font-size:15.5px;max-width:66ch;}
+  summary:focus-visible{outline:2px solid var(--green);outline-offset:-2px;border-radius:var(--r-md);}
+
+  /* ---------- booking ---------- */
+  .book{padding:110px 0 130px;}
+  .book-box{
+    position:relative;text-align:center;
+    background:var(--panel);
+    border:1px solid rgba(74,222,128,.25);
+    border-radius:calc(var(--r-lg) + 6px);
+    padding:72px 40px 64px;
+    overflow:hidden;
+  }
+  @media(max-width:640px){.book-box{padding:52px 22px 48px;}}
+  .book-box::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 60% 60% at 50% 0%, rgba(74,222,128,.14), transparent 70%);
+  }
+  .book-box .sec-head{margin-bottom:36px;position:relative;}
+  .calendly-slot{
+    position:relative;max-width:720px;margin:0 auto 36px;
+    border:1px dashed var(--line-strong);border-radius:var(--r-md);
+    padding:52px 24px;
+    font-size:13px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;
+    font-family:'Space Mono',monospace;
+    background:rgba(0,0,0,.25);
+  }
+
+  footer{border-top:1px solid var(--line);padding:34px 0 48px;}
+  .foot-inner{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;
+    font-size:13px;color:var(--dim);
+  }
+  footer a{color:var(--dim);text-decoration:none;}
+  footer a:hover{color:var(--green);}
+  .foot-links{display:flex;gap:22px;align-items:center;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#"><span class="dot"></span>CRM&nbsp;Crew</a>
+    <a class="nav-cta" href="#book">Book your audit</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <span class="badge"><span class="pulse"></span>For businesses ready to put AI to work</span>
+    <h1>You've seen what AI can do.<br>Now get it <span class="grad-text">built into your business.</span></h1>
+    <p class="sub">Watch the video below — four minutes on which automations actually pay off in <strong>your</strong> business, and how we build them properly.</p>
+
+    <div class="vsl-shell">
+      <div class="vsl-inner">
+        <!-- REPLACE THIS BLOCK WITH YOUR VSL EMBED, e.g.
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="CRM Crew VSL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        -->
+        <div class="vsl-placeholder">
+          <div class="play">
+            <svg width="24" height="28" viewBox="0 0 26 30" fill="none"><path d="M25 15L1 29V1L25 15Z" fill="#04120A"/></svg>
+          </div>
+          <p>VSL embed goes here — swap for your YouTube / Vimeo / Wistia iframe</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <a class="btn" href="#book">Book Your Free AI Audit</a>
+      <span class="cta-note">30 minutes · No cost · No obligation</span>
+    </div>
+
+    <div class="trust-row">
+      <span class="trust-item"><span class="stars">★★★★★</span> Rated <b>[5.0]</b> by clients</span>
+      <span class="trust-item">As seen on <b>YouTube</b> · [XX,XXX] subscribers</span>
+      <span class="trust-item"><b>[X]+</b> businesses automated</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THE OFFER ============ -->
+<section id="offer">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="mono">The Free AI Opportunity Audit</span>
+      <h2>One 30-minute call. Three things you keep — whether we work together or not.</h2>
+      <p class="sec-sub">This is not a "discovery call" where you get vaguely pitched at for half an hour. We do real work on the call, and the output is yours.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="num">1</span>
+        <h3>Your AI opportunity shortlist</h3>
+        <p>We map where the hours and money are leaking out of your operation, and identify the two or three automations with the strongest return — ranked, in plain English.</p>
+      </div>
+      <div class="card reveal">
+        <span class="num">2</span>
+        <h3>An honest "don't bother" list</h3>
+        <p>Half the AI ideas businesses bring us shouldn't be built. We'll tell you which of yours those are, and why — before you spend a penny finding out the hard way.</p>
+      </div>
+      <div class="card reveal">
+        <span class="num">3</span>
+        <h3>A realistic picture of effort &amp; cost</h3>
+        <p>What each opportunity would roughly take to build, what it depends on, and what "good" looks like — so you can make a grown-up decision either way.</p>
+      </div>
+    </div>
+    <div class="keep-line reveal">
+      <p>Take the audit away and build it yourself, hand it to another agency, or do nothing at all. <span>If we're a fit, we'll say so. If we're not, we'll say that too.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIT ============ -->
+<section id="fit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono">Is this for you?</span>
+      <h2>We'd rather turn you away than waste your 30 minutes</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col yes reveal">
+        <span class="mono">Book the call if</span>
+        <ul>
+          <li><span class="icon">✓</span><span>You run or lead a business with real processes — sales, quoting, onboarding, admin — that eat hours every week</span></li>
+          <li><span class="icon">✓</span><span>You've watched what AI agents can do and thought "we should be doing this"</span></li>
+          <li><span class="icon">✓</span><span>You want systems built properly, not a pile of half-connected experiments</span></li>
+          <li><span class="icon">✓</span><span>You'd rather hear a straight "that won't work" than a comfortable yes</span></li>
+        </ul>
+      </div>
+      <div class="fit-col no reveal">
+        <span class="mono">Skip it if</span>
+        <ul>
+          <li><span class="icon">✕</span><span>You're looking for someone to build a chatbot for fun over a weekend</span></li>
+          <li><span class="icon">✕</span><span>You want AI because it's trendy, with no process or problem in mind</span></li>
+          <li><span class="icon">✕</span><span>You're a fellow consultant fishing for a free methodology walkthrough</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section id="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono">Why CRM Crew</span>
+      <h2>We build this for real businesses, every week</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-copy reveal">
+        <p>CRM Crew is a UK consultancy specialising in <strong>CRM, AI and workflow automation</strong>. The videos that brought you here aren't theory — they're the same systems we design and build for clients: AI agents that research and enrich leads, process inbound requests end to end, generate quotes, and keep CRMs actually up to date.</p>
+        <p>We've built automations that handle <strong>[e.g. full RFQ-to-quote pipelines]</strong> for clients in industries as unforgiving as aerospace — where a missed detail costs real money. If it works there, it works in your business.</p>
+        <p>And because we come from a CRM implementation background, we don't build AI toys that live in a silo. Everything connects to the systems your team already uses.</p>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat"><div class="v">[X]<span>+</span></div><div class="k">Businesses served</div></div>
+        <div class="stat"><div class="v">[X] <span>hrs/wk</span></div><div class="k">Typical time saved</div></div>
+        <div class="stat"><div class="v">[X]<span>+</span></div><div class="k">Agents &amp; workflows shipped</div></div>
+        <div class="stat"><div class="v">UK <span>based</span></div><div class="k">Working worldwide</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="mono">What clients say</span>
+      <h2>Don't take our word for it</h2>
+    </div>
+    <div class="quote-card reveal">
+      <span class="stars">★★★★★</span>
+      <blockquote>"[Drop your single strongest client quote here — the one that mentions a concrete result. One killer quote beats ten vague ones.]"</blockquote>
+      <cite><b>[Client name]</b>[Role, Company]</cite>
+    </div>
+    <div class="widget-slot reveal">
+      <!-- REPLACE WITH YOUR REVIEWS WIDGET EMBED CODE (Trustpilot / Google Reviews / Senja / etc.)
+      Paste the widget's script + div exactly as your provider gives it to you. -->
+      Reviews widget embed goes here
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="mono">Questions, answered straight</span>
+      <h2>Before you book</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>Is this secretly a sales call? <span class="tick">+</span></summary>
+        <div class="a">We're a business, so yes — if we can genuinely help, we'll tell you how working with us would look. But the audit itself is real work with real output, and there's zero pressure to go further. Plenty of people take the shortlist and run with it themselves. That's fine by us.</div>
+      </details>
+      <details>
+        <summary>Do I need to be technical? <span class="tick">+</span></summary>
+        <div class="a">Not at all. You need to know your business — where the time goes, what frustrates your team, where things fall through the cracks. We translate that into what's buildable. No jargon required on your side.</div>
+      </details>
+      <details>
+        <summary>What do I need to prepare? <span class="tick">+</span></summary>
+        <div class="a">Nothing formal. Come with a rough idea of the processes that eat the most time or cause the most errors. If you've got numbers — volumes, headcount on a task, hours spent — even better, but we can work without them.</div>
+      </details>
+      <details>
+        <summary>What kind of businesses is this for? <span class="tick">+</span></summary>
+        <div class="a">Established businesses with real operational processes — typically teams of five to a hundred. If you're doing repetitive work in sales, quoting, onboarding, fulfilment or admin, there's almost certainly something worth automating.</div>
+      </details>
+      <details>
+        <summary>Why is it free? <span class="tick">+</span></summary>
+        <div class="a">Because it's the best way for both of us to find out if there's a fit, and because some percentage of the people we help for free become clients. That's the whole model. No tricks, no "limited time" nonsense.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="book-box reveal">
+      <div class="sec-head center">
+        <span class="mono">Book your audit</span>
+        <h2>Pick a time. Bring your business.<br>Leave with a plan.</h2>
+        <p class="sec-sub">We run a limited number of audits each week so every call gets proper attention.</p>
+      </div>
+      <div class="calendly-slot">
+        <!-- REPLACE WITH YOUR CALENDLY EMBED, e.g.
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK/ai-opportunity-audit" style="min-width:320px;height:700px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        -->
+        Calendly / booking embed goes here
+      </div>
+      <a class="btn ghost" href="mailto:hello@crmcrew.co.uk">Or book by email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© CRM Crew Limited · Registered in England &amp; Wales</span>
+    <div class="foot-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
